@@ -1,21 +1,25 @@
 
 body{
     background-color: rgb(243, 243, 234) ;
+    background-image: url('https://th.bing.com/th/id/R.9a99d73d2fddae8d8608dd19236fde70?rik=RYoGAzPfnlYG1A&riu=http%3a%2f%2fwww.catholicdigest.com%2fwp-content%2fuploads%2f2018%2f09%2fiStock-826561288.jpg&ehk=bil8Q0lTVsy4XIM651v8NdeRoux4F0AojUlMkPXboao%3d&risl=&pid=ImgRaw&r=0');
 }
 .to-do-list{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin-top: 100px;
-    margin-left: 100px;
-    margin-right: 100px;
-    border: 1px solid black;
+    margin-left: 150px;
+    margin-right: 150px;
     border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.347);
 }
 
 h1{
     font-size: 4rem;
 }
-
+.text{
+    text-align: left;
+    width: 100px;
+}
 button{
     font-size: 1.7rem;
     font-weight: bold;
@@ -76,7 +80,16 @@ li{
     flex: 1;
 }
 
-.delete-button, .move-button{
+.delete-button, .move-button , .edit-button{
     padding:  8px 12px;
 }
 
+
+.edit-button{
+    background-color: hsl(58, 96%, 64%);
+}
+
+.edit-button:hover{
+    background-color: hsl(58, 100%, 53%);
+}
+ 
