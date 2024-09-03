@@ -24,43 +24,45 @@ function ToDoList() {
     }
 
     function addTask() {
-        if (newTask.trim() !== "") {
-            // Check if the task already exists in the list
-            if (tasks.includes(newTask.trim().toLowerCase())) {
+        const trimmedTask = newTask.trim();
+    
+        // Check if the task already exists, case-insensitive
+        const taskExists = tasks.some(task => task.toLowerCase() === trimmedTask.toLowerCase());
+    
+        if (trimmedTask !== "") {
+            if (taskExists) {
                 setErrorMessage(`"${newTask}" is already in the list.`);
             } else {
                 if (editIndex !== null) {
-                    // Update the existing task
                     const updatedTasks = tasks.map((task, index) =>
-                        index === editIndex ? newTask : task
+                        index === editIndex ? trimmedTask : task
                     );
                     setTasks(updatedTasks);
-                    setEditIndex(null); // Reset the edit index after updating
+                    setEditIndex(null);
                 } else {
-                    // Add a new task
-                    setTasks(t => [...t, newTask]);
+                    setTasks(t => [...t, trimmedTask]);
                 }
-                setNewTask(""); // Clear the input field after adding or updating
-                setErrorMessage(""); // Clear any previous error message
+                setNewTask("");
+                setErrorMessage("");
             }
         }
     }
-
+    
     function deleteTask(index) {
         const updatedTasks = tasks.filter((_, i) => i !== index);
         setTasks(updatedTasks);
     }
 
     function editTask(index) {
-        setNewTask(tasks[index]); // Load the task into the input field
-        setEditIndex(index); // Set the index to be edited
-        setErrorMessage(""); // Clear any previous error message
+        setNewTask(tasks[index]);
+        setEditIndex(index);
+        setErrorMessage("");
     }
 
     function moveTaskUp(index) {
         if (index > 0) {
             const updatedTasks = [...tasks];
-            [updatedTasks[index], updatedTasks[index - 1]] =
+            [updatedTasks[index], updatedTasks[index - 1]] = 
                 [updatedTasks[index - 1], updatedTasks[index]];
             setTasks(updatedTasks);
         }
@@ -79,6 +81,7 @@ function ToDoList() {
         <div className="to-do-list">
             <h1>To-Do List</h1>
             <div>
+                <div className='input'>
                 <input
                     type="text"
                     placeholder='Enter a task'
@@ -89,6 +92,7 @@ function ToDoList() {
                     onClick={addTask}>
                     {editIndex !== null ? "Update Task" : "Add Task"}
                 </button>
+                </div>
                 {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
             </div>
 

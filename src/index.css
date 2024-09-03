@@ -1,95 +1,144 @@
-
-body{
-    background-color: rgb(243, 243, 234) ;
-    background-image: url('https://th.bing.com/th/id/R.9a99d73d2fddae8d8608dd19236fde70?rik=RYoGAzPfnlYG1A&riu=http%3a%2f%2fwww.catholicdigest.com%2fwp-content%2fuploads%2f2018%2f09%2fiStock-826561288.jpg&ehk=bil8Q0lTVsy4XIM651v8NdeRoux4F0AojUlMkPXboao%3d&risl=&pid=ImgRaw&r=0');
-}
-.to-do-list{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin-top: 100px;
-    margin-left: 150px;
-    margin-right: 150px;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.347);
+/* Body Styling */
+body {
+  background-color: rgb(243, 243, 234);
+  background-image: url("https://th.bing.com/th/id/R.9a99d73d2fddae8d8608dd19236fde70?rik=RYoGAzPfnlYG1A&riu=http%3a%2f%2fwww.catholicdigest.com%2fwp-content%2fuploads%2f2018%2f09%2fiStock-826561288.jpg&ehk=bil8Q0lTVsy4XIM651v8NdeRoux4F0AojUlMkPXboao%3d&risl=&pid=ImgRaw&r=0");
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Arial", sans-serif;
+  color: #333;
 }
 
-h1{
-    font-size: 4rem;
-}
-.text{
-    text-align: left;
-    width: 100px;
-}
-button{
-    font-size: 1.7rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    color: white;
-    border: 1px solid rgb(228, 220, 220);
-    border-radius: 6px;
-    cursor: pointer;
-    margin: 1px;
+.input {
+  display: flex;
 }
 
-.add-button{
-    background-color: hsl(125, 47%, 54%);
-    margin-left: 3px;
+/* To-Do List Container */
+.to-do-list {
+  position: relative;
+  text-align: center;
+  margin: 58px auto;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  /* Removed fixed height */
 }
 
-.add-button:hover{
-    background-color: hsl(125, 47%, 45%);
+.index {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 100;
 }
 
-.delete-button{
-    background-color: hsl(0, 47%, 54%);
+/* Header Styling */
+h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.delete-button:hover{
-    background-color: hsl(0, 47%, 44%);
+/* Input Field Styling */
+input[type="text"] {
+  font-size: 1.6rem;
+  height: 50px;
+  width: 80%;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  border-top-left-radius: 200px;
+  border-bottom-left-radius: 200px;
+  color: #555;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.move-button{
-    background-color: hsl(0, 0%, 100%);
+/* Button Base Styling */
+button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-input[type = "text"]{
-    font-size: 1.6rem;
-    height: 50px;
-    border: 1px solid hsla(0, 0%, 80%, .5);
-    border-radius: 6px;
-    color: gray;
+/* Add Button Styling */
+.add-button {
+  background-color: hsl(125, 47%, 54%);
+  color: #fff;
+  font-size: 20px;
+  height: 71px;
+  width: 140px;
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 200px;
 }
 
-ol{
-    padding: 0;
+.add-button:hover {
+  background-color: hsl(125, 47%, 45%);
 }
 
-li{
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 15px;
-    background-color: hsl(0,0%,97%);
-    margin: 10px;
-    border: 1px solid hsla(0, 0%, 85%, 0.75);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
+/* Delete Button Styling */
+.delete-button {
+  background-color: hsl(0, 47%, 54%);
+  color: #fff;
 }
 
-.text{
-    flex: 1;
+.delete-button:hover {
+  background-color: hsl(0, 47%, 44%);
 }
 
-.delete-button, .move-button , .edit-button{
-    padding:  8px 12px;
+/* Move Button Styling */
+.move-button {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-
-.edit-button{
-    background-color: hsl(58, 96%, 64%);
+.move-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-.edit-button:hover{
-    background-color: hsl(58, 100%, 53%);
+/* Edit Button Styling */
+.edit-button {
+  background-color: hsl(58, 96%, 64%);
+  color: #fff;
 }
- 
+
+.edit-button:hover {
+  background-color: hsl(58, 100%, 53%);
+}
+
+/* List Styling */
+ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 15px;
+  background-color: hsl(0, 0%, 97%);
+  margin: 10px 0;
+  border: 1px solid hsla(0, 0%, 85%, 0.75);
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Text Styling */
+.text {
+  flex: 1;
+  padding: 0 10px;
+  color: #333;
+}
+
+/* Button Grouping */
+.delete-button,
+.move-button,
+.edit-button {
+  margin-left: 10px;
+}
